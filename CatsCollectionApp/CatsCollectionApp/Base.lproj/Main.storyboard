@@ -8,56 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CatsCollectionApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="69" translatesAutoresizingMaskIntoConstraints="NO" id="3Ol-7L-E4C">
-                                <rect key="frame" x="10" y="371.5" width="394" height="153"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://api.thecatapi.com/v1/images/search?limit=10&amp;page=1&amp;order=DESC" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wyW-u7-uY5">
-                                        <rect key="frame" x="20" y="0.0" width="354" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAH-CD-n0j">
-                                        <rect key="frame" x="147" y="103" width="100" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="29U-Be-9se"/>
-                                            <constraint firstAttribute="height" constant="50" id="sTH-7P-TzM"/>
-                                        </constraints>
-                                        <state key="normal" title="Go"/>
-                                        <connections>
-                                            <segue destination="MsF-vb-hOT" kind="show" identifier="showCats" id="3FA-Ni-ZrA"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="wyW-u7-uY5" secondAttribute="trailing" constant="20" id="6CQ-Oj-Vgb"/>
-                                    <constraint firstItem="wyW-u7-uY5" firstAttribute="leading" secondItem="3Ol-7L-E4C" secondAttribute="leading" constant="20" id="RGZ-c8-e66"/>
-                                    <constraint firstItem="lAH-CD-n0j" firstAttribute="centerX" secondItem="3Ol-7L-E4C" secondAttribute="centerX" id="SwN-ad-PjC"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="3Ol-7L-E4C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dxj-Zj-47f"/>
-                            <constraint firstItem="3Ol-7L-E4C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Iq0-5g-Ff0"/>
-                            <constraint firstItem="3Ol-7L-E4C" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Pzn-ur-2yv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Ol-7L-E4C" secondAttribute="trailing" constant="10" id="jjZ-Cb-Y4d"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Home" id="un5-0H-yON"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
-        </scene>
         <!--Cats-->
         <scene sceneID="Ol2-xU-OuG">
             <objects>
@@ -66,6 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="QK7-Qi-A3G">
+                                <rect key="frame" x="10" y="99" width="394" height="698"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KNS-xF-Jqa">
                                 <rect key="frame" x="10" y="154" width="394" height="698"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -133,6 +87,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Cats" id="9ej-L9-Nj4"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="QK7-Qi-A3G" id="0vu-iE-jPV"/>
                         <outlet property="collectionView" destination="KNS-xF-Jqa" id="hyE-fK-J9Z"/>
                         <outlet property="searchBar" destination="cPj-so-bPA" id="f6c-O4-HSg"/>
                     </connections>
@@ -161,7 +116,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NcH-ib-UXG"/>
+                        <segue destination="MsF-vb-hOT" kind="relationship" relationship="rootViewController" id="vaU-Lm-Xlh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IoW-EY-eFb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

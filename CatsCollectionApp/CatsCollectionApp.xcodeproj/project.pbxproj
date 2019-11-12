@@ -9,18 +9,19 @@
 /* Begin PBXBuildFile section */
 		7135CAA2237A330C00FA7652 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7135CAA1237A330C00FA7652 /* PinterestLayout.swift */; };
 		7172020E2379EE690079D5E2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172020D2379EE690079D5E2 /* PhotoCell.swift */; };
-		717202132379FA620079D5E2 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717202122379FA620079D5E2 /* Cat.swift */; };
-		71720215237A04A20079D5E2 /* CatRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71720214237A04A20079D5E2 /* CatRequest.swift */; };
-		7172021A237A14C20079D5E2 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71720219237A14C20079D5E2 /* UIImageView+URL.swift */; };
 		7190D96B237413FA00A78525 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190D96A237413FA00A78525 /* AppDelegate.swift */; };
 		7190D96D237413FA00A78525 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190D96C237413FA00A78525 /* SceneDelegate.swift */; };
-		7190D96F237413FA00A78525 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190D96E237413FA00A78525 /* ViewController.swift */; };
 		7190D972237413FA00A78525 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190D970237413FA00A78525 /* Main.storyboard */; };
 		7190D974237413FB00A78525 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7190D973237413FB00A78525 /* Assets.xcassets */; };
 		7190D977237413FB00A78525 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190D975237413FB00A78525 /* LaunchScreen.storyboard */; };
 		7190D982237413FB00A78525 /* CatsCollectionAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190D981237413FB00A78525 /* CatsCollectionAppTests.swift */; };
 		7190D98D237413FB00A78525 /* CatsCollectionAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190D98C237413FB00A78525 /* CatsCollectionAppUITests.swift */; };
 		7190D99B237421FC00A78525 /* CatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190D99A237421FC00A78525 /* CatsViewController.swift */; };
+		71D81E8B237B01290044D657 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D81E8A237B01290044D657 /* ViewModel.swift */; };
+		71D81E90237B018B0044D657 /* CatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D81E8C237B018A0044D657 /* CatClient.swift */; };
+		71D81E91237B018B0044D657 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D81E8D237B018A0044D657 /* Endpoint.swift */; };
+		71D81E92237B018B0044D657 /* CatImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D81E8E237B018A0044D657 /* CatImages.swift */; };
+		71D81E93237B018B0044D657 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D81E8F237B018B0044D657 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,13 +44,9 @@
 /* Begin PBXFileReference section */
 		7135CAA1237A330C00FA7652 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		7172020D2379EE690079D5E2 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
-		717202122379FA620079D5E2 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
-		71720214237A04A20079D5E2 /* CatRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRequest.swift; sourceTree = "<group>"; };
-		71720219237A14C20079D5E2 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		7190D967237413FA00A78525 /* CatsCollectionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatsCollectionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7190D96A237413FA00A78525 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7190D96C237413FA00A78525 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7190D96E237413FA00A78525 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7190D971237413FA00A78525 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7190D973237413FB00A78525 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7190D976237413FB00A78525 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +58,11 @@
 		7190D98C237413FB00A78525 /* CatsCollectionAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsCollectionAppUITests.swift; sourceTree = "<group>"; };
 		7190D98E237413FB00A78525 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7190D99A237421FC00A78525 /* CatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsViewController.swift; sourceTree = "<group>"; };
+		71D81E8A237B01290044D657 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		71D81E8C237B018A0044D657 /* CatClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatClient.swift; sourceTree = "<group>"; };
+		71D81E8D237B018A0044D657 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		71D81E8E237B018A0044D657 /* CatImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatImages.swift; sourceTree = "<group>"; };
+		71D81E8F237B018B0044D657 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,25 +102,19 @@
 		7172020F2379F09B0079D5E2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				71720214237A04A20079D5E2 /* CatRequest.swift */,
+				71D81E8F237B018B0044D657 /* APIClient.swift */,
+				71D81E8D237B018A0044D657 /* Endpoint.swift */,
+				71D81E8C237B018A0044D657 /* CatClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		717202102379F0A60079D5E2 /* Modal */ = {
+		717202102379F0A60079D5E2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				717202122379FA620079D5E2 /* Cat.swift */,
+				71D81E8E237B018A0044D657 /* CatImages.swift */,
 			);
-			path = Modal;
-			sourceTree = "<group>";
-		};
-		71720216237A13D40079D5E2 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				71720219237A14C20079D5E2 /* UIImageView+URL.swift */,
-			);
-			path = Extension;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7190D95E237413FA00A78525 = {
@@ -144,13 +140,12 @@
 		7190D969237413FA00A78525 /* CatsCollectionApp */ = {
 			isa = PBXGroup;
 			children = (
-				71720216237A13D40079D5E2 /* Extension */,
+				71D81E87237B00DD0044D657 /* ViewModels */,
 				7172020F2379F09B0079D5E2 /* Networking */,
-				717202102379F0A60079D5E2 /* Modal */,
+				717202102379F0A60079D5E2 /* Model */,
 				7172020C2379EE2D0079D5E2 /* Views */,
 				7190D96A237413FA00A78525 /* AppDelegate.swift */,
 				7190D96C237413FA00A78525 /* SceneDelegate.swift */,
-				7190D96E237413FA00A78525 /* ViewController.swift */,
 				7190D99A237421FC00A78525 /* CatsViewController.swift */,
 				7190D970237413FA00A78525 /* Main.storyboard */,
 				7190D973237413FB00A78525 /* Assets.xcassets */,
@@ -176,6 +171,14 @@
 				7190D98E237413FB00A78525 /* Info.plist */,
 			);
 			path = CatsCollectionAppUITests;
+			sourceTree = "<group>";
+		};
+		71D81E87237B00DD0044D657 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				71D81E8A237B01290044D657 /* ViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,14 +312,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71720215237A04A20079D5E2 /* CatRequest.swift in Sources */,
-				7190D96F237413FA00A78525 /* ViewController.swift in Sources */,
+				71D81E8B237B01290044D657 /* ViewModel.swift in Sources */,
 				7172020E2379EE690079D5E2 /* PhotoCell.swift in Sources */,
-				717202132379FA620079D5E2 /* Cat.swift in Sources */,
-				7172021A237A14C20079D5E2 /* UIImageView+URL.swift in Sources */,
+				71D81E92237B018B0044D657 /* CatImages.swift in Sources */,
+				71D81E90237B018B0044D657 /* CatClient.swift in Sources */,
 				7190D99B237421FC00A78525 /* CatsViewController.swift in Sources */,
 				7135CAA2237A330C00FA7652 /* PinterestLayout.swift in Sources */,
+				71D81E93237B018B0044D657 /* APIClient.swift in Sources */,
 				7190D96B237413FA00A78525 /* AppDelegate.swift in Sources */,
+				71D81E91237B018B0044D657 /* Endpoint.swift in Sources */,
 				7190D96D237413FA00A78525 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +497,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WPLH4V94L;
 				INFOPLIST_FILE = CatsCollectionApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -511,6 +516,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WPLH4V94L;
 				INFOPLIST_FILE = CatsCollectionApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
