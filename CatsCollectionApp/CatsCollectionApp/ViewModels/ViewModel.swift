@@ -16,9 +16,9 @@ struct CellViewModel {
 
 class ViewModel {
     // MARK: Properties
-    
-    private let client: APIClient
-    
+
+    private let _accessor: PhotoAccessorProtocol
+
     private var photos: Photos = [] {
         didSet {
             self.fetchPhoto()
@@ -38,21 +38,19 @@ class ViewModel {
     var reloadData: (() -> Void)?
     var showError: ((Error) -> Void)?
     
-    init(client: APIClient) {
-        self.client = client
+    init(client: PhotoAccessorProtocol) {
+        self._accessor = client
     }
     
-    func fetchPhotos(catId : String) {
-        if let client = client as? CatClient {
-            self.isLoading = true
-            let endpoint = CatEndpoint.photos(limit: "10", order: .DESC, catId: catId)
-            client.fetch(with: endpoint) { (either) in
-                switch either {
-                case .success(let photos):
-                    self.photos = photos
-                case .error(let error):
-                    self.showError?(error)
-                }
+    func fetchPhotos(request: PhotoRequest) {
+
+        self.isLoading = true
+        _accessor.getPhotos(request: request) { (result) in
+            if(result != nil){
+                self.photos = result!
+            }else{
+                self.showError?(PhotoError.generalError(message: "Something is not right in fetchPhotos function"))
+                debugPrint("Error occured")
             }
         }
     }
@@ -79,23 +77,21 @@ class ViewModel {
             self.reloadData?()
         }
     }
-    
+
     func downloadImage(url: URL, completion: @escaping (_ image: UIImage?, _ error: Error? ) -> Void) {
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
             completion(cachedImage, nil)
         } else {
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let error = error {
-                    print("Couldn't download image: ", error)
-                    completion(nil, error)
-                }
-                else if let data = data, let image = UIImage(data: data) {
+
+            let request = DownloadRequest(contentUrl: url)
+            _accessor.downloadPhoto(request: request) { (data) in
+                if let data = data, let image = UIImage(data: data) {
                     imageCache.setObject(image, forKey: url.absoluteString as NSString)
                     completion(image, nil)
                 } else {
-                    completion (nil, error)
+                    completion (nil, PhotoError.generalError(message: "Something is not right in downloadImage function"))
                 }
-            }.resume()
+            }
         }
     }
 }

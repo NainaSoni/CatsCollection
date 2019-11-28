@@ -26,8 +26,8 @@ class CatsViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: - Properties
-    let viewModel = ViewModel(client: CatClient())
-    
+    let viewModel = ViewModel(client: AccessorFactory.createPhotoAccessor())
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,10 +60,16 @@ class CatsViewController: UIViewController {
         viewModel.reloadData = {
             self.collectionView.reloadData()
         }
-        
-        viewModel.fetchPhotos(catId: category)
+
+        viewModel.fetchPhotos(request: createPhotoRequest(categoryId: category))
     }
 }
+
+// MARK: Create photo request
+private func createPhotoRequest(categoryId: String) -> PhotoRequest{
+    return PhotoRequest(limit: "10", order: "1", category_ids: categoryId)
+}
+
 
 //MARK: - Flow layout delegate
 
@@ -99,13 +105,14 @@ extension CatsViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         guard let searchBarText = searchBar.text else {return}
-        viewModel.fetchPhotos(catId: CatID(text: searchBarText).rawValue)
+        viewModel.fetchPhotos(request: createPhotoRequest(categoryId: CatID(text: searchBarText).rawValue))
     }
     
     // API searchByCategory doesn't support text, so we have to convert into categoryid enum
     // Also we can search only below tags with this API
+    //can be moved in extension
     func CatID(text : String) -> CATEGORY_ID {
-        
+
         if (text.caseInsensitiveCompare("hats") == .orderedSame || text.caseInsensitiveCompare("hat") == .orderedSame) {
             return .hats
         }else if (text.caseInsensitiveCompare("space") == .orderedSame) {
@@ -122,4 +129,6 @@ extension CatsViewController : UISearchBarDelegate {
             return .all
         }
     }
+
+    
 }
