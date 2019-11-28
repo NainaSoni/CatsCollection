@@ -26,6 +26,7 @@
 		864B3D5A2390312E00704766 /* DownloadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B3D592390312E00704766 /* DownloadRequest.swift */; };
 		864B3D5F2390336800704766 /* AccessorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B3D5E2390336800704766 /* AccessorFactory.swift */; };
 		864B3D7523903C7600704766 /* PhotoAccessorTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B3D7423903C7600704766 /* PhotoAccessorTestCases.swift */; };
+		864B3D77239041F100704766 /* PhotoCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B3D76239041F100704766 /* PhotoCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		864B3D6923903C3F00704766 /* CatsCollectionAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatsCollectionAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		864B3D6D23903C3F00704766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		864B3D7423903C7600704766 /* PhotoAccessorTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAccessorTestCases.swift; sourceTree = "<group>"; };
+		864B3D76239041F100704766 /* PhotoCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			children = (
 				864B3D502390195D00704766 /* ApiConstants.swift */,
 				864B3D5723902EA400704766 /* PhotoError.swift */,
+				864B3D76239041F100704766 /* PhotoCategory.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				864B3D56239024E100704766 /* PhotoAccessor.swift in Sources */,
 				71D81E92237B018B0044D657 /* CatImages.swift in Sources */,
 				7190D99B237421FC00A78525 /* CatsViewController.swift in Sources */,
+				864B3D77239041F100704766 /* PhotoCategory.swift in Sources */,
 				864B3D53239021F000704766 /* PhotoRequest.swift in Sources */,
 				864B3D5A2390312E00704766 /* DownloadRequest.swift in Sources */,
 				864B3D5F2390336800704766 /* AccessorFactory.swift in Sources */,

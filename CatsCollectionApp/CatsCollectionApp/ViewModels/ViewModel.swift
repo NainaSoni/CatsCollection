@@ -78,7 +78,7 @@ class ViewModel {
         }
     }
 
-    func downloadImage(url: URL, completion: @escaping (_ image: UIImage?, _ error: Error? ) -> Void) {
+    private func downloadImage(url: URL, completion: @escaping (_ image: UIImage?, _ error: Error? ) -> Void) {
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
             completion(cachedImage, nil)
         } else {

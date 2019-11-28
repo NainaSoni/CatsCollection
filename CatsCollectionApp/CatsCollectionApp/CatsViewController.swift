@@ -8,16 +8,6 @@
 
 import UIKit
 
-enum CATEGORY_ID: String {
-    case all = ""
-    case hats = "1"
-    case space = "2"
-    case sunglasses = "4"
-    case boxes = "5"
-    case sinks = "14"
-    case clothes = "15"
-}
-
 class CatsViewController: UIViewController {
     
     //MARK: - Outlets
@@ -37,7 +27,7 @@ class CatsViewController: UIViewController {
             layout.delegate = self
         }
         collectionView?.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        getCats(category: "")
+        getCats(category: PhotoCategory.all.rawValue)
         
     }
     
@@ -111,7 +101,7 @@ extension CatsViewController : UISearchBarDelegate {
     // API searchByCategory doesn't support text, so we have to convert into categoryid enum
     // Also we can search only below tags with this API
     //can be moved in extension
-    func CatID(text : String) -> CATEGORY_ID {
+    func CatID(text : String) -> PhotoCategory {
 
         if (text.caseInsensitiveCompare("hats") == .orderedSame || text.caseInsensitiveCompare("hat") == .orderedSame) {
             return .hats
@@ -129,6 +119,4 @@ extension CatsViewController : UISearchBarDelegate {
             return .all
         }
     }
-
-    
 }

@@ -52,7 +52,7 @@ class PhotoAccessorTestCases: XCTestCase {
     func test_getPhotos_With_Hats_Category_Returns_PhotoCollection(){
 
         //ARRANGE
-        let request = PhotoRequest(limit:"10",order:"1",category_ids:"1")
+        let request = PhotoRequest(limit:"10",order:"1",category_ids:PhotoCategory.hats.rawValue)
         let expectation = XCTestExpectation(description: "Data received from server")
 
         //ACT

@@ -17,13 +17,6 @@ struct HttpMethodType {
     static let POST = "POST"
 }
 
-struct HttpStatusCode  {
-    static let success = 200
-    static let badRequest = 400
-    static let notFound = 404
-    static let internalServer_Error = 500
-}
-
 protocol HttpClientProtocol {
     func getData<T: Codable>(with request: PhotoRequest, resultType: T.Type, completion: @escaping (_ result: T?) -> Void)
     func getData(with Url: URL, completion: @escaping(_ data: Data?) -> Void)
